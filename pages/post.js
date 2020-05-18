@@ -6,7 +6,9 @@ import Head from 'next/head';
 
 const Post = (props) => (
     <div>
-        <Head>{RichText.render(props.post.data.title)}</Head>
+        <Head>
+            <title>{RichText.render(props.post.data.title)}</title>
+        </Head>
         <Link href='/'>
             <a>back to blog list</a>
         </Link>
