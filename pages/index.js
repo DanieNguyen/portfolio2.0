@@ -3,9 +3,11 @@ import Prismic from 'prismic-javascript';
 import { RichText, Date } from 'prismic-reactjs';
 import { client, linkResolver, hrefResolver } from '../prismic-configuration';
 import Link from 'next/link';
+import Head from 'next/head';
 
 const BlogHome = (props) => (
     <div>
+        <Head>Daniel Nguyen</Head>
         <img src={props.home.data.image.url} alt='avatar image' />
         <h1>{RichText.asText(props.home.data.headline)}</h1>
         <p>{RichText.asText(props.home.data.description)}</p>

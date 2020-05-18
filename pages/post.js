@@ -2,9 +2,11 @@ import React from 'react';
 import { RichText, Date } from 'prismic-reactjs';
 import { client } from '../prismic-configuration';
 import Link from 'next/link';
+import Head from 'next/head';
 
 const Post = (props) => (
     <div>
+        <Head>{RichText.render(props.post.data.title)}</Head>
         <Link href='/'>
             <a>back to blog list</a>
         </Link>
