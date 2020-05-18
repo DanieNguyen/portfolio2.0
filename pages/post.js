@@ -22,7 +22,10 @@ Post.getInitialProps = async (context) => {
     const { uid } = context.query;
     const post = await client.getByUID('post', uid);
     if (context.res) {
-      context.res.setHeader('Cache-Control', 's-maxage=1, stale-while-revalidate')
+        context.res.setHeader(
+            'Cache-Control',
+            's-maxage=1, stale-while-revalidate'
+        );
     }
     return { post };
 };
